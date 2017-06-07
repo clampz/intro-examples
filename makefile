@@ -1,4 +1,4 @@
-all: bears malloc pwnme reverseme wildcopy
+all: bears malloc pwnme formatstring wildcopy reverseme
 
 bears:
 	gcc -m32 -z relro -z now -fPIE -pie -fstack-protector-all -o bears bears.c
