@@ -1,3 +1,7 @@
+/* malloc example
+ * gcc -m32 malloc.c -o malloc.c
+ * */
+
 #include <stdio.h>
 #include <stdlib.h>
 

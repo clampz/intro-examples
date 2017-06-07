@@ -1,5 +1,5 @@
 /* reverse me
- * gcc reverseme.c -o reverseme
+ * gcc -m32 reverseme.c -o reverseme
  * */
 
 #include <stdio.h>
