@@ -19,3 +19,7 @@ reverseme:
 	gcc -m32 reverseme.c -o reverseme
 	rm reverseme.c
 
+clean:
+	rm -rf .git
+	rm makefile
+
