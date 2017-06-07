@@ -1,5 +1,5 @@
 /* malloc example
- * gcc -m32 malloc.c -o malloc.c
+ * gcc -m32 malloc.c -o malloc
  * */
 
 #include <stdio.h>

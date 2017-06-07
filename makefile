@@ -4,7 +4,7 @@ bears:
 	gcc -m32 -z relro -z now -fPIE -pie -fstack-protector-all -o bears bears.c
 
 malloc:
-	gcc -m32 malloc.c -o malloc.c
+	gcc -m32 malloc.c -o malloc
 
 pwnme:
 	gcc -m32 -fno-stack-protector pwnme.c -o pwnme
