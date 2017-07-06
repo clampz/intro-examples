@@ -7,6 +7,8 @@
 #include <stdlib.h>
 #include <fcntl.h>
 
+#define disable_buffering(_fd) setvbuf(_fd, NULL, _IONBF, 0)
+
 struct polar {
     char name[16];
     unsigned int name_len;
@@ -59,6 +61,9 @@ int main() {
     char y_or_n;
     unsigned int randfd;
     unsigned int option = 0;
+
+    disable_buffering(stdout);
+    disable_buffering(stdin);
 
     while (1) {
         print_menu();
