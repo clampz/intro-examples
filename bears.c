@@ -30,7 +30,7 @@ void secret_admin_shell() {
 }
 
 void edit_polar(struct polar *polie) {
-    printf("Enter your name name (length is limited by length of old name for security!!): ");
+    printf("Enter your name (length is limited by length of old name for security!!): ");
     fflush(stdout);
     read(0, polie->name, strlen(polie->name));
 }
