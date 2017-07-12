@@ -9,19 +9,33 @@
 
 #define disable_buffering(_fd) setvbuf(_fd, NULL, _IONBF, 0)
 
+struct message {
+    char buf[24];
+    int len;
+    void (* result)();
+};
+
+void lose() {
+    puts("loser\n");
+}
+
 void win() {
     system("/bin/bash");
 }
 
 void main() {
-    char buf[20];
-    int len = 20;
+    struct message *msg;
     disable_buffering(stdout);
-    while (len >= 20) {
+    msg = malloc(sizeof(struct message));
+    msg->len = 24;
+    msg->result = lose;
+    while (msg->len >= 24) {
         printf("What is your length? ");
-        scanf("%d", &len);
+        scanf("%d", &msg->len);
         getc(stdin); // eat up newline
     }
     printf("OK, what is your buf? ");
-    read(0, buf, len);
+    read(0, msg->buf, msg->len);
+    msg->result();
+    free(msg);
 }
