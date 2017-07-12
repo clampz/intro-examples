@@ -1,5 +1,4 @@
 /* wild copy
- * clampz
  * gcc -m32 -fno-stack-protector -o wildcopy wildcopy.c
  * */
 
