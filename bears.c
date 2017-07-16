@@ -78,12 +78,13 @@ int main() {
                 printf("You already have a grizzly, would you like to rename it instead? (y/n) ");
                 y_or_n = getc(stdin);
                 if (y_or_n == 'n') {
+                    ;
+                } else {
+                    printf("K, whats your grizzly's new name? ");
+                    fflush(stdout);
+                    read(0, fred->name, fred->name_len);
                     continue;
                 }
-                printf("K, whats your grizzly's new name? ");
-                fflush(stdout);
-                read(0, fred->name, fred->name_len);
-                continue;
             }
             fred = malloc(sizeof(struct grizzly));
             printf("K your grizzly is at 0x%08x\n", (unsigned int) fred);
@@ -113,12 +114,13 @@ int main() {
                 y_or_n = getc(stdin);
                 getc(stdin);
                 if (y_or_n == 'n') {
+                    ;
+                } else {
+                    printf("K, what's your polars new name? ");
+                    fflush(stdout);
+                    read(0, agnis->name, agnis->name_len);
                     continue;
                 }
-                printf("K, what's your polars new name? ");
-                fflush(stdout);
-                read(0, agnis->name, agnis->name_len);
-                continue;
             }
             agnis = malloc(sizeof(struct polar));
             printf("K your polar is at 0x%08x\n", (unsigned int) agnis);
