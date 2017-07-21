@@ -9,6 +9,13 @@ void isawinner(char *arg) {
 }
 
 void main(int argc, char ** argv) {
+    char buf[10];
+    char buf2[10];
     char *endptr;
-    (strtol(argv[1], &endptr, 10) == 1337) ? isawinner(argv[2]) : puts(":C fail\n");
+    printf("enter an input: ");
+    fgets(buf, 10, stdin);
+    printf("enter a second input: ");
+    fgets(buf2, 10, stdin);
+    buf2[strcspn(buf2, "\n")] = (char)0;
+    (strtol(buf, &endptr, 10) == 1337) ? isawinner(buf2) : puts(":C fail\n");
 }
