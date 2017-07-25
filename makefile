@@ -1,4 +1,4 @@
-all: bears malloc pwnme formatstring wildcopy reverseme
+all: bears malloc pwnme formatstring wildcopy reverseme asm
 
 bears:
 	gcc -m32 -z relro -z now -fPIE -pie -fstack-protector-all -o bears bears.c
@@ -18,6 +18,9 @@ wildcopy:
 reverseme:
 	gcc -m32 reverseme.c -o reverseme
 	rm reverseme.c
+
+asm:
+	gcc -m32 asm.c -o asm
 
 clean:
 	rm -rf .git
